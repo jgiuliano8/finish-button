@@ -84,10 +84,10 @@ body {
   border-color: #45b078;
   background-color: #fff;
   animation-name: transformation;
-  animation-duration: 3s;
+  animation-duration: 1s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
-  transition: width 0s 3s, left 0s 3s, background-color 0s 3s;
+  transition: width 0s 1s, left 0s 1s, background-color 0s 1s;
 }
 
 /* 0%-10% is the shrinking of the button */
@@ -104,26 +104,16 @@ body {
     background-color: var(--color);
   }
 
-  10% {
+  100% {
     width: 60px;
     border-color: #45b078;
-    left: 95px;
-  }
-  50% {
-    z-index: 1;
     background-color: var(--color);
-  }
-  70% {
-    width: 60px;
-    height: 60px;
     left: 95px;
-    border-color: #45b078;
-    background-color: var(--color);
   }
 }
 #finish-button:checked ~ .button-control #svg-circle {
   animation-name: make-visible;
-  animation-delay: 0.3s;
+  animation-delay: 1s;
   animation-duration: 2s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
@@ -140,7 +130,7 @@ body {
 
 #finish-button:checked ~ .button-control #svg-circle #circle-2 {
   animation-name: timer;
-  animation-delay: 0.3s;
+  animation-delay: 1s;
   animation-duration: 2s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
