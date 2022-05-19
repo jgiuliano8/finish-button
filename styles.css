@@ -84,10 +84,10 @@ body {
   border-color: #45b078;
   background-color: #fff;
   animation-name: transformation;
-  animation-duration: 3s;
+  animation-duration: 1s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
-  transition: width 0s 3s, left 0s 3s, background-color 0s 3s;
+  transition: width 0s 2s, left 0s 2s, background-color 0s 2s;
 }
 
 /* 0%-10% is the shrinking of the button */
@@ -104,34 +104,16 @@ body {
     background-color: var(--color);
   }
 
-  10% {
+  100% {
     width: 60px;
     border-color: #45b078;
-    left: 95px;
-  }
-  50% {
-    z-index: 1;
     background-color: var(--color);
-  }
-  50.1% {
-    box-shadow: none;
-    outline: 4px solid #fff;
-    outline-offset: 0px;
-  }
-  70% {
-    width: 60px;
-    height: 60px;
     left: 95px;
-    border-color: #45b078;
-    background-color: #fff;
-  }
-  70.1% {
-    outline: none;
   }
 }
 #finish-button:checked ~ .button-control #svg-circle {
   animation-name: make-visible;
-  animation-delay: 0.3s;
+  animation-delay: 1s;
   animation-duration: 2s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
@@ -148,7 +130,7 @@ body {
 
 #finish-button:checked ~ .button-control #svg-circle #circle-2 {
   animation-name: timer;
-  animation-delay: 0.3s;
+  animation-delay: 1s;
   animation-duration: 2s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
@@ -161,12 +143,12 @@ body {
   }
 
   50% {
-    stroke: #fff;
+    stroke-width: 2px;
     stroke-dashoffset: 0;
   }
   50.1% {
     r: 30;
-    stroke: #fff;
+    stroke: black;
     stroke-width: 3px;
     stroke-dashoffset: 0;
     stroke-dasharray: 188.5;
