@@ -34,7 +34,7 @@ body {
 .button-control {
   position: relative;
   width: 250px;
-  height: 60px;
+  height: 62px;
 }
 
 #finish-button {
@@ -45,23 +45,19 @@ body {
   display: block;
   position: absolute;
   width: 250px;
-  height: 60px;
+  height: 62px;
 }
 
 #svg-circle {
   /* display: none; */
+  visibility: hidden;
   position: relative;
+  z-index: 3;
   left: 50%;
-  transform: translateX(-50%);
-}
-
-#svg-circle circle {
-  /* stroke-dashoffset: 188.5;
-  stroke-dasharray: 188.5; */
+  transform: translate(-50%, -43px) rotate(-90deg);
 }
 
 .button {
-  display: none;
   position: absolute;
   left: 0px;
   z-index: 2;
@@ -82,18 +78,11 @@ body {
   content: "FINISH";
 }
 
-svg:hover #svg-button {
-  fill: #37be77;
-  transition: fill 350ms;
-}
-
 #finish-button:checked ~ .button-control .button {
   width: 60px;
   left: 95px;
   border-color: #45b078;
   background-color: #fff;
-  /* outline: 5px solid #57d895;
-  outline-offset: 50px; */
   animation-name: transformation;
   animation-duration: 3s;
   animation-iteration-count: 1;
@@ -119,30 +108,9 @@ svg:hover #svg-button {
     width: 60px;
     border-color: #45b078;
     left: 95px;
-    box-shadow: 30px -30px 0 2px var(--color), 30px 30px 0 2px var(--color),
-      -30px 30px 0 2px var(--color), -30px -30px 0 2px var(--color),
-      0 0 0 2px #fff;
-  }
-  20% {
-    box-shadow: 65px 0 0 2px var(--color), 30px 30px 0 2px var(--color),
-      -30px 30px 0 2px var(--color), -30px -30px 0 2px var(--color),
-      0 0 0 2px #fff;
-  }
-  30% {
-    box-shadow: 65px 0 0 2px var(--color), 0 65px 0 2px var(--color),
-      -30px 30px 0 2px var(--color), -30px -30px 0 2px var(--color),
-      0 0 0 2px #fff;
-  }
-  40% {
-    box-shadow: 65px 0 0 2px var(--color), 0px 65px 0 2px var(--color),
-      -65px 0px 0 2px var(--color), -30px -30px 0 2px var(--color),
-      0 0 0 2px #fff;
   }
   50% {
-    box-shadow: 65px 0 0 2px var(--color), 0px 65px 0 2px var(--color),
-      -65px 0px 0 2px var(--color), -20px -75px 0 2px var(--color),
-      0 0 0 2px #fff;
-    outline: none;
+    z-index: 1;
     background-color: var(--color);
   }
   50.1% {
@@ -163,38 +131,55 @@ svg:hover #svg-button {
     outline: none;
   }
 }
+#finish-button:checked ~ .button-control #svg-circle {
+  animation-name: make-visible;
+  animation-delay: 0.3s;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
 
-#finish-button:checked ~ .button-control #svg-circle g {
+@keyframes make-visible {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+#finish-button:checked ~ .button-control #svg-circle #circle-2 {
   animation-name: timer;
-  animation-duration: 1s;
+  animation-delay: 0.3s;
+  animation-duration: 2s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
 }
 
 @keyframes timer {
   0% {
-    stroke: #fff;
-    stroke-dashoffset: -188.5;
-  }
-
-  25% {
-    stroke: #fff;
-    stroke-dashoffset: -141.375;
+    stroke-dashoffset: 188.5;
+    stroke-dasharray: 188.5;
   }
 
   50% {
     stroke: #fff;
-    stroke-dashoffset: -94.25;
-  }
-
-  75% {
-    stroke: #fff;
-    stroke-dashoffset: -47.125;
-  }
-
-  100% {
-    stroke: #fff;
     stroke-dashoffset: 0;
+  }
+  50.1% {
+    r: 30;
+    stroke: #fff;
+    stroke-width: 3px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 188.5;
+  }
+  100% {
+    r: 60;
+    stroke: var(--color);
+    stroke-width: 3px;
+    stroke-dashoffset: 0;
+
+    stroke-dasharray: 377;
   }
 }
 #finish-button:checked ~ .button-control .button::after {
