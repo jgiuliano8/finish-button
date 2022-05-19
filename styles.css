@@ -115,16 +115,12 @@ body {
   }
   50.1% {
     box-shadow: none;
-    outline: 4px solid #fff;
-    outline-offset: 0px;
   }
   70% {
     width: 60px;
     height: 60px;
     left: 95px;
     border-color: #45b078;
-    outline: 4px solid var(--color);
-    outline-offset: 30px;
     background-color: #fff;
   }
   70.1% {
@@ -163,12 +159,12 @@ body {
   }
 
   50% {
-    stroke: #fff;
+    stroke: black;
     stroke-dashoffset: 0;
   }
   50.1% {
     r: 30;
-    stroke: #fff;
+    stroke: black;
     stroke-width: 3px;
     stroke-dashoffset: 0;
     stroke-dasharray: 188.5;
