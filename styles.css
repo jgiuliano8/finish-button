@@ -113,18 +113,12 @@ body {
     z-index: 1;
     background-color: var(--color);
   }
-  50.1% {
-    box-shadow: none;
-  }
   70% {
     width: 60px;
     height: 60px;
     left: 95px;
     border-color: #45b078;
-    background-color: #fff;
-  }
-  70.1% {
-    outline: none;
+    background-color: var(--color);
   }
 }
 #finish-button:checked ~ .button-control #svg-circle {
