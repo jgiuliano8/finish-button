@@ -46,13 +46,13 @@ body {
   position: absolute;
   width: 250px;
   height: 60px;
+  border-radius: 60px;
 }
 
 #svg-circle {
   /* display: none; */
-  /* visibility: hidden; */
+  visibility: hidden;
   position: absolute;
-  z-index: 3;
   left: 50%;
   transform: translate(-50%, -45px) rotate(-90deg);
 }
@@ -60,7 +60,6 @@ body {
 .button {
   position: absolute;
   left: 0px;
-  z-index: 2;
   width: 250px;
   height: 100%;
   margin: 0 auto;
@@ -72,10 +71,18 @@ body {
   font-size: 1.25rem;
   text-align: center;
   letter-spacing: 2px;
+  transition: background-color 350ms;
 }
 
 .button::after {
   content: "FINISH";
+  position: relative;
+  top: -1px;
+}
+
+.button:hover {
+  background-color: #37be77;
+  cursor: pointer;
 }
 
 #finish-button:checked ~ .button-control .button {
@@ -132,7 +139,7 @@ body {
   }
 }
 
-#finish-button:checked ~ .button-control #svg-circle #circle-2 {
+#finish-button:checked ~ .button-control #svg-circle #circle-1 {
   animation-name: timer;
   animation-delay: 0.5s;
   animation-duration: 2s;
